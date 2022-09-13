@@ -1,0 +1,40 @@
+{% extends "dashboard/header.html" %}
+{% block content %}
+{% include "dashboard/topnav.html" %}
+<!-- End Topside -->
+<!-- Table -->
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-4">
+            
+           </div> 
+        <div class="col-md-8">
+            <table class="table bg-white">
+                <thead class="bg-info">
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">category</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Order by</th>
+                    </tr>
+            
+                </thead>
+
+                <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <th>{{ order.product }}</th>
+                        <td>{{ order.category }}</td>
+                        <td>{{ order.order_quantity }}</td>
+                        <td>{{ order.product.name }}</td>
+                       
+                    </tr>
+                    
+                {% endfor %}
+                </tbody>
+            </table>   
+        </div>
+    </div>
+</div>
+
+{% endblock  %}
